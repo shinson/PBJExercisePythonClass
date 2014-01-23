@@ -62,7 +62,7 @@ else:
 if No_of_open_face == 1 :
 	part2 = "one PB&J open face sandwich. Not the best, but just deal with it."
 else:
-	part2 = "zero PB&J  open face sandwiches. There must be other sandwiches"
+	part2 = "zero PB&J  open face sandwiches. There must be other sandwiches."
 
 #Define what we have left over after open face sandwiches to determine the number of single ingredient sandwiches
 leftoverJ2 = jelly - No_of_sandwiches - No_of_open_face
