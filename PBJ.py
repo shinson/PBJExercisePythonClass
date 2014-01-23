@@ -24,10 +24,16 @@ elif pb < jelly and pb < NoOfBread:
 	NoOfSandwiches = pb
 elif pb > jelly and jelly < NoOfBread:
 	NoOfSandwiches = jelly
+elif pb == jelly and pb<NoOfBread:
+	NoOfsandwiches = pb
+elif NoOfBread == pb and NoOfBread<jelly:
+	NoOfSandwiches = NoOfBread
+elif jelly == NoOfBread and jelly < pb:
+	NoOfSandwiches = jelly
 elif NoOfBread == 0 or pb == 0 or jelly == 0:
 	NoOfSandwiches = 0
 else:
-	NoOfSandwiches = 0
+	NoOfSandwiches = NoOfBread
 	
 if NoOfSandwiches == 1 :
 	part1 = "1 PB&J sandwich. Hip Hip Hooray."
@@ -55,7 +61,7 @@ else:
 leftoverJ2 = jelly - NoOfSandwiches - NoOpenFace
 leftoverPB2 = pb - NoOfSandwiches - NoOpenFace
 leftoverB2 = bread - (NoOfSandwiches*2) - NoOpenFace
-leftoverNoOfBread = (bread/2) - (NoOfSandwiches) - NoOpenFace
+leftoverNoOfBread = leftoverB2/2
 
 
 if leftoverJ2 < leftoverNoOfBread and leftoverB2>=2 and leftoverJ2 >=1:
@@ -64,6 +70,8 @@ elif leftoverJ2 > leftoverNoOfBread and leftoverB2>=2:
 	noJellySandwich = leftoverNoOfBread
 elif leftoverJ2==0 or leftoverNoOfBread<=2:
 	noJellySandwich = 0
+elif leftoverJ2 == leftoverNoOfBread:
+	noJellySandwich = leftoverJ2
 else:
 	noJellySandwich = 0
 
@@ -74,12 +82,14 @@ elif noJellySandwich >1 :
 else:
 	part3 = "0 jelly sandwiches. Peanut butter is better anyways."
 
-if leftoverPB2 < leftoverNoOfBread and leftoverB2>=2 and leftoverPB>=1:
+if leftoverPB2 < leftoverNoOfBread and leftoverPB2>=2 and leftoverPB2>=1:
 	noPbSandwich = leftoverJ2
-elif leftoverPB2 > leftoverNoOfBread and leftoverB2>=2:
+elif leftoverPB2 > leftoverNoOfBread and leftoverPB2>=2:
 	noPbSandwich = leftoverNoOfBread
 elif leftoverPB2==0 or leftoverNoOfBread<=2:
 	noPbSandwich = 0
+elif leftoverPB2==leftoverNoOfBread:
+	noPbSandwich = leftoverPB2
 else:
 	noPbSandwich = 0
 
@@ -107,3 +117,4 @@ You can make {4}
 And make {5}
 Finally, you can make {6}
 {7}""".format(pb, jelly, Nobread, part1, part2, part3, part4, part5)
+
