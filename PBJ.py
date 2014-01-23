@@ -9,7 +9,7 @@ if bread == 1:
 elif bread >1:
 	Nobread = "{0} slices".format(bread)
 else:
-	Nobrea = " 0 slices."
+	Nobread = " 0 slices."
 
 if pb >=1 and jelly >=1 and bread >=2:
 	PBJsandwich = "Yes"
